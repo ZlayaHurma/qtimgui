@@ -45,7 +45,7 @@ const QHash<int, ImGuiKey> keyMap = {
     { Qt::Key_X, ImGuiKey_X },
     { Qt::Key_Y, ImGuiKey_Y },
     { Qt::Key_Z, ImGuiKey_Z },
-    { Qt::MiddleButton, ImGuiMouseButton_Middle }
+    { Qt::MiddleButton, ImGuiKey_MouseMiddle }
 };
 
 #ifndef QT_NO_CURSOR
@@ -82,9 +82,9 @@ void ImGuiRenderer::initialize(WindowWrapper *window) {
     io.BackendPlatformName = "qtimgui";
     
     // Setup keyboard mapping
-    for (ImGuiKey key : keyMap.values()) {
-        io.KeyMap[key] = key;
-    }
+    // for (ImGuiKey key : keyMap.values()) {
+    //     io.KeyMap[key] = key;
+    // }
     
     // io.RenderDrawListsFn = [](ImDrawData *drawData) {
     //    instance()->renderDrawList(drawData);
